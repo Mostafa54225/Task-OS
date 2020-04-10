@@ -70,8 +70,13 @@ public class ChangeMod {
                 System.out.println(command);
                 try {
                     Process process = builder.start();
-                    System.out.println("1");
-                } catch (IOException e) {
+                    int exitCode = process.waitFor();
+                    if(exitCode != 0)
+                        JOptionPane.showMessageDialog(null, "ERROR FOUND!");
+
+                    else
+                        JOptionPane.showMessageDialog(null, "Permissions are CHANGED successfully!");
+                } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
                 subCommand="";
