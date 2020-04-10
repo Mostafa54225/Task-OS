@@ -50,7 +50,8 @@ public class ChangeMod {
                     if (ochk.isSelected())
                         subCommand+="o";
                 }
-                subCommand+=("=");
+                if (subCommand!="")
+                    subCommand+=("=");
 
                 if (rchk.isSelected()&&wchk.isSelected()&&xchk.isSelected())
                     subCommand+="rwx";
