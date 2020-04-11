@@ -14,7 +14,7 @@ public class Main {
         JPanel mainPanel, choicesPanel;
 
         // Main Panel for the page
-        mainPanel = new JPanel(new GridLayout(3, 1));
+        mainPanel = new JPanel(new GridLayout(2, 1));
 
         JButton list = new JButton("List");
         JButton makeDir = new JButton("Make (dir,file)");
@@ -29,7 +29,7 @@ public class Main {
         // Content Panel
         contentPanel = new JPanel();
 
-        // List Button
+        // Action Button (List)
         list.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -39,7 +39,7 @@ public class Main {
         });
 
 
-        // Make Dir Button
+        // Action Button (Make Dir)
         makeDir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -48,7 +48,7 @@ public class Main {
             }
         });
 
-        // Delete Button
+        // Action Button (Delete)
         deleteDir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -57,7 +57,7 @@ public class Main {
             }
         });
 
-        // Create Symbolic Button
+        // Action Button (Create Symbolic)
         createSymbolicLink.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -66,7 +66,7 @@ public class Main {
             }
         });
 
-        // Change Permission Button
+        // Action Button (Change Permission)
         changePermission.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -75,6 +75,7 @@ public class Main {
             }
         });
 
+        // Action Button (Manual Page)
         manPage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -82,6 +83,7 @@ public class Main {
             }
         });
 
+        // Add Components to the panel
         choicesPanel.add(list);
         choicesPanel.add(makeDir);
         choicesPanel.add(deleteDir);
