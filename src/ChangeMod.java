@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +38,8 @@ public class ChangeMod {
         command.add("chmod");
         subCommand="";
         builder = new ProcessBuilder();
-        changeBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+        builder.directory(new File(System.getProperty("user.home")));
+        changeBtn.addActionListener(e ->  {
                 if (uchk.isSelected()&&gchk.isSelected()&&ochk.isSelected())
                     subCommand+="a";
                 else {
@@ -50,7 +50,7 @@ public class ChangeMod {
                     if (ochk.isSelected())
                         subCommand+="o";
                 }
-                if (subCommand!="")
+                if (!subCommand.equals(""))
                     subCommand+=("=");
 
                 if (rchk.isSelected()&&wchk.isSelected()&&xchk.isSelected())
@@ -77,8 +77,8 @@ public class ChangeMod {
 
                     else
                         JOptionPane.showMessageDialog(null, "Permissions are CHANGED successfully!");
-                } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
+                } catch (IOException | InterruptedException ex) {
+                    ex.printStackTrace();
                 }
                 subCommand="";
                 uchk.setSelected(false);
@@ -89,9 +89,7 @@ public class ChangeMod {
                 xchk.setSelected(false);
                 command.clear();
                 command.add("chmod");
-            }
-
-        });
+            });
         panel = new JPanel();
         layout = new GridLayout(3,1);
         layout.setHgap(50);
