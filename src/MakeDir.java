@@ -72,12 +72,12 @@ public class MakeDir implements ActionListener {
         if (e.getSource()== button1)
         {
             MakeDirector(text1.getText());
-            text1.setText(" ");
+            text1.setText("");
         }
         if (e.getSource()== button2)
         {
             MakeFile( text1.getText());
-            text1.setText(" ");
+            text1.setText("");
         }
 
 
