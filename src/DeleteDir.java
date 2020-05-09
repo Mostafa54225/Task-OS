@@ -12,12 +12,11 @@ public class DeleteDir {
 
 
     DeleteDir(){
-        JButton deletebutton = new JButton("delete 1");
+        JButton deletebutton = new JButton("delete");
         JTextField deletetext = new JTextField(40);
         panel = new JPanel();
-        panel.add(deletebutton);
         panel.add(deletetext);
-
+        panel.add(deletebutton);
 
         deletebutton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -44,8 +43,11 @@ public class DeleteDir {
 
         try{
             Process process =processBuilder.start();
+            int exitCode = process.waitFor();
+            if(exitCode != 0)
+                JOptionPane.showMessageDialog(null, "ERROR FOUND!");
 
-        } catch (IOException e){
+        } catch (IOException | InterruptedException e){
             e.printStackTrace();
         }
 

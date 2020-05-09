@@ -21,7 +21,6 @@ public class Main {
         JButton deleteDir = new JButton("Delete (dir,file)");
         JButton createSymbolicLink = new JButton("Create Symbolic Link");
         JButton changePermission = new JButton("Change Permission of a file");
-        JButton manPage = new JButton("Manual Page");
         // Choices Panel for the buttons
         choicesPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 45,50));
 
@@ -75,27 +74,18 @@ public class Main {
             }
         });
 
-        // Action Button (Manual Page)
-        manPage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                ManualPage manualPage = new ManualPage();
-            }
-        });
-
         // Add Components to the panel
         choicesPanel.add(list);
         choicesPanel.add(makeDir);
         choicesPanel.add(deleteDir);
         choicesPanel.add(createSymbolicLink);
         choicesPanel.add(changePermission);
-        choicesPanel.add(manPage);
 
         mainPanel.add(choicesPanel);
         mainPanel.add(contentPanel);
 
         frame.add(mainPanel);
-        frame.setSize(1200,800);
+        frame.setSize(1020,800);
         frame.setVisible(true);
     }
 

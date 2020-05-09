@@ -60,8 +60,11 @@ public class MakeDir implements ActionListener {
 
         try{
             Process process =processBuilder.start();
+            int exitCode = process.waitFor();
+            if(exitCode != 0)
+                JOptionPane.showMessageDialog(null, "ERROR FOUND!");
 
-        } catch (IOException e){
+        } catch (IOException | InterruptedException e){
             e.printStackTrace();
         }
 
