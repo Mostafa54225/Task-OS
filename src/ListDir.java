@@ -15,7 +15,6 @@ public class ListDir {
     JTextField path;
     JTextArea list;
     JLabel label;
-    //GridLayout layout;
     JScrollPane scroll;
     ProcessBuilder processBuilder;
     private List<String> command;
@@ -30,7 +29,6 @@ public class ListDir {
         list.setLineWrap(false);
         list.setWrapStyleWord(false);
         scroll = new JScrollPane (list, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        //list.setSize(80,40);
         processBuilder = new ProcessBuilder();
         processBuilder.directory(new File(System.getProperty("user.home")));
         command = new ArrayList<>();
@@ -56,9 +54,6 @@ public class ListDir {
                 ex.printStackTrace();
             }
         });
-        //layout = new GridLayout(4,3);
-        //layout.setVgap(10);
-        //panel.setLayout(layou);
         panel.add(label);
         panel.add(path);
         panel.add(listBtn);

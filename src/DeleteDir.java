@@ -21,8 +21,6 @@ public class DeleteDir {
         deletebutton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
 
-                 /*deletefielddata = deletetext.getText();
-                 System.out.println(deletefielddata);*/
                 deletedirmethod(deletetext.getText());
 
             }
